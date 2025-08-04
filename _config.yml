@@ -1,0 +1,7 @@
+title: My Private Site
+author: Me
+description: > # this means to ignore newlines until "baseurl:"
+  This is my private GitHub Pages site. Hidden from Google, accessible only via link.
+baseurl: "/private-site" # repository name
+url: "https://bbangbongg.github.io" # your GitHub Pages URL without trailing slash
+theme: minima
