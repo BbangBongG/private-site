@@ -11,7 +11,7 @@ header_pages:
 collections:
   proof-diary:
     output: true
-    permalink: /proof-diary/:title/
+    permalink: /proof-diary/:name/
 defaults:
   - scope:
       path: ""
