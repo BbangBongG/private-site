@@ -27,3 +27,12 @@ permalink: /proof-diary/
   <li><code>{{ p.path }}</code> → <code>{{ p.url | relative_url }}</code></li>
 {% endfor %}
 </ul>
+
+<hr>
+<h3>Built files</h3>
+<ul>
+{% assign coll = site.collections | where: "label", "proof-diary" | first %}
+{% for p in coll.docs %}
+  <li><code>{{ p.path }}</code> → <code>{{ p.url }}</code></li>
+{% endfor %}
+</ul>
