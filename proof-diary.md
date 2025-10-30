@@ -1,17 +1,20 @@
 ---
-layout: default
 title: Proof Diary
+layout: page
 permalink: /proof-diary/
 ---
 
-<h1>Proof Diary</h1>
-
+{% assign coll = site.collections['proof-diary'] %}
+{% if coll and coll.docs and coll.docs.size > 0 %}
 <ul>
-{% assign entries = site.proof_diary | sort: "date" | reverse %}
-{% for entry in entries %}
-  <li>
-    <a href="{{ entry.url | relative_url }}">{{ entry.title }}</a>
-    <small>({{ entry.date | date: "%Y-%m-%d" }})</small>
-  </li>
-{% endfor %}
+  {% assign posts = coll.docs | sort: 'date' | reverse %}
+  {% for p in posts %}
+    <li>
+      <a href="{{ p.url | relative_url }}">{{ p.title | default: p.path }}</a>
+      {% if p.date %} — <small>{{ p.date | date: "%Y-%m-%d" }}</small>{% endif %}
+    </li>
+  {% endfor %}
 </ul>
+{% else %}
+<p>No entries yet.</p>
+{% endif %}
