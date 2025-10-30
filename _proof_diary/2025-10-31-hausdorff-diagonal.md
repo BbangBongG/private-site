@@ -1,11 +1,11 @@
 ---
-title: Hausdorff and Closed Diagonal
+title: Hausdorff ⇔ Closed Diagonal
 date: 2025-10-31
+layout: proof_entry   # keep this line if you created _layouts/proof_entry.html
 ---
 
-Today I reviewed the equivalence of the Hausdorff condition and the closed diagonal property.
-
-**Idea:** In product topology,  
-\[(U\times V)\cap \Delta = \{(z,z): z \in U\cap V\}.\]
-
-Hence, if the intersection is empty, \(U\cap V=\emptyset\).
+Key identity:
+\[
+(U\times V)\cap \Delta(X) = \{(z,z): z\in U\cap V\}.
+\]
+Hence (U×V)∩Δ = ∅ ⇔ U∩V = ∅.
