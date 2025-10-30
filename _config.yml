@@ -2,16 +2,18 @@ title: My Private Site
 author: Me
 description: > # this means to ignore newlines until "baseurl:"
   This is my private GitHub Pages site.
-baseurl: "/private-site" # repository name
-url: "https://bbangbongg.github.io" # your GitHub Pages URL without trailing slash
+baseurl: "/private-site"
+url: "https://bbangbongg.github.io"
 theme: minima
-# put this near the top-level (same level as 'theme:')
+
 header_pages:
   - proof-diary.md
+
 collections:
   proof-diary:
     output: true
     permalink: /proof-diary/:name/
+
 defaults:
   - scope:
       path: ""
@@ -19,10 +21,15 @@ defaults:
     values:
       layout: proof_entry
 
-# Optional: navigation links (for the top menu)
 minima:
   nav_links:
     - title: "Home"
       url: "/private-site/"
     - title: "Proof Diary"
       url: "/private-site/proof-diary/"
+
+# ➕ math rendering
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
