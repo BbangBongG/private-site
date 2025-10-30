@@ -1,10 +1,7 @@
 ---
 title: "Hausdorff ⇔ Closed Diagonal"
-date: 2025-10-31
-layout: proof_entry
-permalink: /proof-diary/hausdorff-diagonal/
+layout: default
 ---
-
 Key identity:
 \[
 (U\times V)\cap \Delta(X) = \{(z,z): z\in U\cap V\}.
