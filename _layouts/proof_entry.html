@@ -1,8 +1,9 @@
 ---
+layout: default
 ---
-{% include header.html %}
 <main class="page-content" aria-label="Content">
   <div class="wrapper">
+    <p><a href="{{ '/proof-diary/' | relative_url }}">← Back to Proof Diary</a></p>
     <h1>{{ page.title }}</h1>
     {% if page.date %}
       <p><em>{{ page.date | date: "%Y-%m-%d" }}</em></p>
@@ -11,7 +12,7 @@
   </div>
 </main>
 
-<!-- MathJax config + script MUST be inside <body>, i.e., before footer include -->
+<!-- MathJax config + script (inside <body>) -->
 <script>
   window.MathJax = {
     tex: {
@@ -21,6 +22,4 @@
   };
 </script>
 <script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-{% include footer.html %}
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
