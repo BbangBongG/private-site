@@ -1,7 +1,8 @@
 ---
-title: Hausdorff ⇔ Closed Diagonal
+title: "Hausdorff ⇔ Closed Diagonal"
 date: 2025-10-31
-layout: proof_entry   # keep this line if you created _layouts/proof_entry.html
+layout: proof_entry
+permalink: /proof-diary/hausdorff-diagonal/
 ---
 
 Key identity:
