@@ -18,3 +18,12 @@ permalink: /proof-diary/
 {% else %}
 <p>No entries yet.</p>
 {% endif %}
+
+<hr>
+<h3>Debug: collection URLs</h3>
+<ul>
+{% assign coll = site.collections | where: "label", "proof-diary" | first %}
+{% for p in coll.docs %}
+  <li><code>{{ p.path }}</code> → <code>{{ p.url | relative_url }}</code></li>
+{% endfor %}
+</ul>
