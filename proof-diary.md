@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Proof Diary
+permalink: /proof-diary/
 ---
 
 <h1>Proof Diary</h1>
