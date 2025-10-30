@@ -7,7 +7,7 @@ url: "https://bbangbongg.github.io" # your GitHub Pages URL without trailing sla
 theme: minima
 # put this near the top-level (same level as 'theme:')
 header_pages:
-  - proof-diary.md
+  - proof_diary.md
 collections:
   proof-diary:
     output: true
