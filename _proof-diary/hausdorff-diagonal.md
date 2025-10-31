@@ -4,8 +4,6 @@ layout: proof_entry
 date: 2025-10-31
 ---
 
-Inline test: $a^2+b^2=c^2$.
-
 **Key identity (for any open $U,V \subset X$):**
 
 $$
