@@ -1,5 +1,5 @@
 ---
-title: "Hausdorff $\leftrightarrow$ Closed Diagonal"
+title: Hausdorff $\leftrightarrow$ Closed Diagonal
 layout: proof_entry
 date: 2025-10-31
 ---
