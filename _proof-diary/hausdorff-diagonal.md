@@ -1,5 +1,5 @@
 ---
-title: "Hausdorff ⇔ Closed Diagonal"
+title: "Hausdorff $\iff$ Closed Diagonal"
 layout: proof_entry
 date: 2025-10-31
 ---
