@@ -1,58 +1,78 @@
 ---
-title: "Linear Independence and Uniqueness of Representation"
+title: "Equivalence of Mathematical Induction and the Well-Ordering Principle"
 date: 2026-01-02
 categories: proof-diary
-tags: [linear-algebra]
+tags: [foundations, induction, logic]
 ---
 
 ### Statement
 
-Let \( \vec v_1, \ldots, \vec v_m \in \mathbb{K}^n \).  
-The following are equivalent:
+The Principle of Mathematical Induction holds if and only if the Well-Ordering Principle holds for the natural numbers.
 
-1. \( \{\vec v_1, \ldots, \vec v_m\} \) is linearly independent.
-2. The equation  
-   \[
-   \vec 0 = c_1 \vec v_1 + \cdots + c_m \vec v_m
-   \]
-   has a unique solution \( c_1 = \cdots = c_m = 0 \).
-3. Every vector \( \vec b \in \mathrm{span}(\vec v_1, \ldots, \vec v_m) \) has a unique representation as a linear combination of the vectors.
-
----
-
-### Idea / Strategy
-
-Linear independence can be understood as the absence of ambiguity in linear combinations.
-If the zero vector has only the trivial representation, then no vector in the span can have two different representations.
-The proof proceeds by comparing two representations and subtracting them.
+That is:
+- Every nonempty subset of \( \mathbb{N} \) has a smallest element  
+  **if and only if**
+- Any subset \( S \subseteq \mathbb{N} \) containing \(1\) and closed under successor must equal \( \mathbb{N} \).
 
 ---
 
 ### Proof
 
-(1) ⇒ (2):  
-If the vectors are linearly independent, then by definition the only linear combination equal to \( \vec 0 \) is the trivial one. Hence the solution is unique.
+We prove both directions.
 
-(2) ⇒ (3):  
-Suppose  
+---
+
+### (⇒) Induction implies Well-Ordering
+
+Assume the Principle of Mathematical Induction holds.  
+Suppose, toward a contradiction, that there exists a nonempty set  
+\( S \subseteq \mathbb{N} \) with no smallest element.
+
+Define
 \[
-\vec b = c_1 \vec v_1 + \cdots + c_m \vec v_m
-= d_1 \vec v_1 + \cdots + d_m \vec v_m.
+R = \{x \in \mathbb{N} \mid x \le s \text{ for every } s \in S\}.
 \]
-Subtracting gives
-\[
-\vec 0 = (c_1 - d_1)\vec v_1 + \cdots + (c_m - d_m)\vec v_m.
-\]
-By uniqueness in (2), all coefficients must be zero, so \( c_i = d_i \) for all \( i \).
 
-(3) ⇒ (2):  
-Apply (3) to \( \vec b = \vec 0 \). Since the trivial combination always works, uniqueness implies it is the only one.
+Since \( S \) has no smallest element, we have \( R \cap S = \emptyset \).
+Clearly, \(1 \in R\).
 
-Thus all three statements are equivalent.
+Assume \(k \in R\). Then all natural numbers less than or equal to \(k\) are in \(R\).
+If \(k+1 \in S\), then \(k+1\) would be the smallest element of \(S\), contradicting our assumption.
+Hence \(k+1 \in R\).
+
+By induction, \(R = \mathbb{N}\).  
+But this implies \(S = \emptyset\), contradicting that \(S\) is nonempty.
+
+Therefore, every nonempty subset of \( \mathbb{N} \) must have a smallest element.
+
+---
+
+### (⇐) Well-Ordering implies Induction
+
+Assume the Well-Ordering Principle holds.  
+Let \( S \subseteq \mathbb{N} \) satisfy:
+1. \(1 \in S\),
+2. If \(k \in S\), then \(k+1 \in S\).
+
+Suppose \(S \ne \mathbb{N}\). Then the complement \( \mathbb{N} \setminus S \) is nonempty.
+By well-ordering, it has a smallest element \(z\).
+
+Since \(1 \in S\), we must have \(z \ge 2\), so \(z-1 \ge 1\).
+By minimality of \(z\), we have \(z-1 \in S\).
+
+But then condition (2) implies \(z \in S\), a contradiction.
+
+Thus \(S = \mathbb{N}\), and the Principle of Mathematical Induction holds.
+
+---
+
+### Conclusion
+
+The Well-Ordering Principle and Mathematical Induction are logically equivalent.
+They are two different formulations of the same foundational structure of the natural numbers.
 
 ---
 
 ### Remarks
 
-This result explains why linearly independent sets provide coordinate systems for their span.
-It also motivates the definition of a basis as a set with both spanning and uniqueness properties.
+This equivalence explains why proofs by minimal counterexample and proofs by induction are fundamentally the same technique expressed in different logical languages.
